@@ -1,7 +1,7 @@
 /* Soulified forms: validation, rights check, and submission.
    Submissions are emailed via FormSubmit (https://formsubmit.co), so no server is needed.
    To change where submissions go, edit FORM_EMAIL below. */
-const FORM_EMAIL = "hello@besoulified.com";
+const FORM_EMAIL = "gino@besoulified.com";
 
 (function () {
   const form = document.querySelector("form.sf");
