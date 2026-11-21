@@ -10,7 +10,11 @@ SERVICES = ["Lead vocal", "Backing vocals & harmonies", "Electric guitar", "Acou
             "Keys & piano", "Strings or horns", "Full band", "Mix & master only", "Not sure yet"]
 INSTRUMENTS = ["Lead vocals", "Backing vocals", "Electric guitar", "Acoustic guitar", "Bass", "Drums",
                "Keys & piano", "Strings", "Horns", "Production & mixing", "Other"]
-SOCIAL = ""  # filled in once handles are confirmed
+SOCIAL = (
+    '<a href="https://www.instagram.com/besoulified/" target="_blank" rel="noopener">Instagram</a>'
+    '<a href="https://www.tiktok.com/@besoulified" target="_blank" rel="noopener">TikTok</a>'
+    '<a href="https://x.com/beSoulified" target="_blank" rel="noopener">X</a>'
+)
 
 HEAD = '''<!DOCTYPE html>
 <html lang="en">
