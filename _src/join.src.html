@@ -1,0 +1,83 @@
+{{HEAD:Join as a musician | Soulified:Singers, session players and bands: apply to re-record AI songs for creators in your genre and get paid.}}
+<body>
+{{HEADER}}
+<main>
+<div class="wrap narrow">
+  <div class="page-head">
+    <div class="kicker">For musicians</div>
+    <h1>Bring your sound. Name your price.</h1>
+    <p class="lead">Soulified connects AI song creators with top-tier singers, session players and established bands. You record from your own setup, we handle the client, and you get paid well for your work. We're selective: we're building a roster of serious professionals, not a crowd.</p>
+  </div>
+
+  <div class="grid3" style="margin:0 0 40px">
+    <div class="card"><h3>Premium projects</h3><p>We position Soulified at the high end, so you're paid like the pro you are, not bid down by the cheapest option.</p></div>
+    <div class="card"><h3>We handle clients</h3><p>No chasing leads, quotes or invoices. You get clear parts, references and a deadline.</p></div>
+    <div class="card"><h3>Your lane, your rate</h3><p>Jobs are matched by genre, and established artists can set their own rates.</p></div>
+  </div>
+
+  <form class="sf" data-kind="musician" data-subject="New musician application" data-button="Send application" novalidate>
+    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <fieldset>
+      <legend>About you</legend>
+      <div class="row2">
+        <div class="field"><label for="name">Your name <span class="req">*</span></label><input id="name" type="text" name="Name" required autocomplete="name"></div>
+        <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" type="email" name="Email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="stage">Artist or band name <span class="hint">Optional</span></label><input id="stage" type="text" name="Artist or band name"></div>
+        <div class="field"><label for="loc">City and country</label><input id="loc" type="text" name="Location"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="type">Applying as <span class="req">*</span></label>
+          <select id="type" name="Applying as" required><option value="">Choose one</option><option>Solo musician / singer</option><option>Full band</option><option>Producer / engineer</option></select></div>
+        <div class="field"><label for="years">Years playing</label>
+          <select id="years" name="Years experience"><option value="">Choose one</option><option>Under 5</option><option>5 to 10</option><option>10 to 20</option><option>20+</option></select></div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>What you play</legend>
+      <div class="field"><span class="label">Instruments and roles <span class="req">*</span></span>
+        <div class="opts" data-required-group="Instruments and roles">
+          {{INSTRUMENT_OPTIONS}}
+        </div>
+      </div>
+      <div class="field"><span class="label">Genres you're strongest in <span class="req">*</span></span>
+        <div class="opts" data-required-group="Genres">
+          {{GENRE_CHECKS}}
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your sound</legend>
+      <div class="field"><label for="credits">Credits and notable work <span class="req">*</span><span class="hint">Albums, artists you've recorded or toured with, placements, labels, chart or streaming highlights. The more specific, the better.</span></label><textarea id="credits" name="Credits and notable work" required></textarea></div>
+      <div class="field"><label for="samples">Links to your playing <span class="req">*</span><span class="hint">2 or 3 recordings that show your best work: SoundCloud, YouTube, Instagram, Drive, your site. Your own parts matter most.</span></label><textarea id="samples" name="Sample links" required></textarea></div>
+      <div class="row2">
+        <div class="field"><label for="setup">Recording setup <span class="req">*</span></label>
+          <select id="setup" name="Recording setup" required><option value="">Choose one</option><option>Pro home or studio setup</option><option>Basic home setup (interface and mic)</option><option>I need studio access</option></select></div>
+        <div class="field"><label for="turn">Typical turnaround for one part</label>
+          <select id="turn" name="Turnaround"><option value="">Choose one</option><option>1 to 2 days</option><option>3 to 5 days</option><option>About a week</option><option>Depends on the job</option></select></div>
+      </div>
+      <div class="field"><label for="rate">Your rate <span class="hint">Per part, per song, or per day. A ballpark is fine.</span></label><input id="rate" type="text" name="Usual rate"></div>
+      <div class="field"><label for="more">Anything else we should know?</label><textarea id="more" name="Notes"></textarea></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>The fine print</legend>
+      <label class="agree"><input type="checkbox" name="Agrees to work-for-hire" value="Yes" required><span>I understand recordings for Soulified projects are work-for-hire, owned by the client once paid, with terms confirmed in writing for each job. <span class="req">*</span></span></label>
+      <label class="agree"><input type="checkbox" name="Understands vetting" value="Yes" required><span>I understand every musician is reviewed before joining, and applying doesn't guarantee work. <span class="req">*</span></span></label>
+    </fieldset>
+
+    <div class="submit-row">
+      <button class="btn gold" type="submit">Send application</button>
+      <span class="form-msg" role="alert"></span>
+    </div>
+  </form>
+</div>
+</main>
+{{FOOTER}}
+<script src="form.js"></script>
+</body>
+</html>

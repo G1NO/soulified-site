@@ -1,0 +1,23 @@
+{{HEAD:Thanks | Soulified:Thanks for reaching out to Soulified.}}
+<body>
+{{HEADER}}
+<main>
+<section class="hero" style="min-height:62vh">
+  <div class="wrap narrow center" style="display:block">
+    <div class="kicker" id="tk">Got it</div>
+    <h1 id="th">Thanks. Your song is in.</h1>
+    <p class="lead" id="tp" style="margin:22px auto 32px">We'll give it a listen, check the rights side, and email you a quote, usually within two business days. Keep an eye on your inbox (and spam folder, just in case).</p>
+    <div class="btns" style="justify-content:center"><a class="btn gold" href="index.html">Back to home</a></div>
+  </div>
+</section>
+</main>
+{{FOOTER}}
+<script>
+if (new URLSearchParams(location.search).get('t') === 'musician') {
+  document.getElementById('tk').textContent = 'Application received';
+  document.getElementById('th').textContent = 'Thanks for applying.';
+  document.getElementById('tp').textContent = "We listen to every application. If your sound fits what our clients are asking for, we'll reach out with next steps. It can take a little while as we grow the network, so hang tight.";
+}
+</script>
+</body>
+</html>

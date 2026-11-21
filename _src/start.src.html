@@ -1,0 +1,87 @@
+{{HEAD:Start your song | Soulified:Send your AI song for a free review. Tell us what to make human and we'll match you with the right musicians.}}
+<body>
+{{HEADER}}
+<main>
+<div class="wrap narrow">
+  <div class="page-head">
+    <div class="kicker">Free song review</div>
+    <h1>Start your song</h1>
+    <p class="lead">Tell us about your track. We'll review it, check the rights side, and send you a firm quote. You don't pay anything until you approve it.</p>
+  </div>
+
+  <form class="sf" data-kind="creator" data-subject="New song request" data-button="Send for free review" novalidate>
+    <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <fieldset>
+      <legend>About you</legend>
+      <div class="row2">
+        <div class="field"><label for="name">Your name <span class="req">*</span></label><input id="name" type="text" name="Name" required autocomplete="name"></div>
+        <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" type="email" name="Email" required autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="artist">Artist or project name <span class="hint">Optional</span></label><input id="artist" type="text" name="Artist name"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your song</legend>
+      <div class="field"><label for="title">Song title <span class="req">*</span></label><input id="title" type="text" name="Song title" required></div>
+      <div class="field"><label for="songlink">Link to your song <span class="req">*</span><span class="hint">A Suno or Udio share link, Google Drive, Dropbox or WeTransfer. Make sure we can open it.</span></label><input id="songlink" type="url" name="Song link" required placeholder="https://"></div>
+      <div class="row2">
+        <div class="field"><label for="stems">Do you have stems?</label>
+          <select id="stems" name="Has stems"><option value="">Choose one</option><option>Yes</option><option>No</option><option>Not sure what stems are</option></select></div>
+        <div class="field"><label for="stemlink">Stems link <span class="hint">If you have them</span></label><input id="stemlink" type="url" name="Stems link" placeholder="https://"></div>
+      </div>
+      <div class="field"><label for="genre">Genre <span class="req">*</span></label>
+        <select id="genre" name="Genre" required><option value="">Choose a genre</option>{{GENRE_OPTIONS}}<option>Other / not sure</option></select></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Rights check <small>so there are no surprises later</small></legend>
+      <div class="row2">
+        <div class="field"><label for="platform">Which AI made it? <span class="req">*</span></label>
+          <select id="platform" name="AI platform" required><option value="">Choose one</option><option>Suno</option><option>Udio</option><option>Another AI tool</option><option>Not sure</option></select></div>
+        <div class="field"><label for="plan">Your plan when you made and downloaded it <span class="req">*</span></label>
+          <select id="plan" name="Plan when created" required><option value="">Choose one</option><option>Paid plan</option><option>Free plan / free trial</option><option>Not sure</option></select></div>
+      </div>
+      <div class="field"><label for="use">What do you want to do with the finished song? <span class="req">*</span></label>
+        <select id="use" name="Intended use" required><option value="">Choose one</option><option>Release it (streaming, sales, sync)</option><option>Content (YouTube, social, ads)</option><option>Personal use only</option><option>Not sure yet</option></select></div>
+      <div id="rights-box" class="rights-box" aria-live="polite"></div>
+      <label class="agree"><input type="checkbox" name="Rights confirmation" value="Confirmed" required><span>I confirm I have the right to share this song with Soulified for re-recording, and I'll let you know if I'm unsure. <span class="req">*</span></span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>What should be human?</legend>
+      <div class="field"><span class="label">Pick everything you want re-recorded <span class="req">*</span></span>
+        <div class="opts" data-required-group="What should be human">
+          {{SERVICE_OPTIONS}}
+        </div>
+      </div>
+      <div class="field"><label for="pkg">Closest package</label>
+        <select id="pkg" name="Package"><option value="">Not sure, help me choose</option><option>Session part</option><option>Lead vocal</option><option>Full band</option><option>Signature artist</option></select></div>
+      <div class="field" id="artist-field"><label for="dream">Dream artist <span class="hint">Want a specific artist or musician on your record? Tell us who.</span></label><input id="dream" type="text" name="Requested artist" placeholder="Optional"></div>
+      <div class="field"><label for="love">What do you love about the AI version? <span class="hint">We'll protect it: a melody, a groove, the vibe.</span></label><textarea id="love" name="Keep from the original"></textarea></div>
+      <div class="field"><label for="refs">Reference songs or artists <span class="hint">Who should it sound like? Links welcome.</span></label><textarea id="refs" name="References"></textarea></div>
+      <div class="field"><label for="change">Anything you'd change? <span class="hint">Lyrics, tempo, arrangement, a different singer style…</span></label><textarea id="change" name="Changes wanted"></textarea></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Budget and timing</legend>
+      <div class="row2">
+        <div class="field"><label for="budget">Budget range</label>
+          <select id="budget" name="Budget"><option value="">Choose one</option><option>$300 to $750</option><option>$750 to $1,500</option><option>$1,500 to $5,000</option><option>$5,000 to $25,000</option><option>$25,000+</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="deadline">Need it by <span class="hint">Optional</span></label><input id="deadline" type="date" name="Deadline"></div>
+      </div>
+      <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" type="text" name="Heard about us"></div>
+      <label class="agree"><input type="checkbox" name="Understands free review" value="Yes" required><span>I understand this is a free review, not an order. I'll get a quote to approve before any work or payment. <span class="req">*</span></span></label>
+    </fieldset>
+
+    <div class="submit-row">
+      <button class="btn gold" type="submit">Send for free review</button>
+      <span class="form-msg" role="alert"></span>
+    </div>
+  </form>
+</div>
+</main>
+{{FOOTER}}
+<script src="form.js"></script>
+</body>
+</html>
