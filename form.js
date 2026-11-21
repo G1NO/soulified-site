@@ -91,6 +91,7 @@ const FORM_EMAIL = "gino@besoulified.com";
       if (k === "_honey") continue;
       data[k] = data[k] ? data[k] + ", " + v : v;
     }
+    form.querySelectorAll("input[data-optin]").forEach((c) => { if (!c.checked) data[c.name] = "No"; });
     data._subject = form.dataset.subject + (data["Song title"] ? ": " + data["Song title"] : data["Name"] ? ": " + data["Name"] : "");
     data._template = "table";
     if (data["Email"]) data._replyto = data["Email"];
