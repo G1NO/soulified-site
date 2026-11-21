@@ -7,7 +7,7 @@ LOGO = '<img src="emblem-nav.png" alt="" width="83" height="30">'
 GENRES = ["Rock", "Indie", "Pop", "Soul & R&B", "Funk", "Blues", "Country", "Folk & Acoustic",
           "Singer-songwriter", "Reggae", "Latin", "Gospel", "Jazz", "Hip-hop (live band)", "Metal", "Worship"]
 SERVICES = ["Lead vocal", "Backing vocals & harmonies", "Electric guitar", "Acoustic guitar", "Bass", "Drums",
-            "Keys & piano", "Strings or horns", "Full band", "Mix & master only", "Not sure yet"]
+            "Keys & piano", "Strings or horns", "Full band", "My own vocal (I'll record it)", "Mix & master only", "Not sure yet"]
 INSTRUMENTS = ["Lead vocals", "Backing vocals", "Electric guitar", "Acoustic guitar", "Bass", "Drums",
                "Keys & piano", "Strings", "Horns", "Production & mixing", "Other"]
 SOCIAL = (
@@ -53,6 +53,7 @@ FOOTER = '''<footer>
     <nav>
       <a href="start.html">Start a project</a>
       <a href="join.html">For musicians</a>
+      <a href="record.html">Recording guide</a>
       <a href="privacy.html">Privacy</a>
       {{SOCIAL}}
     </nav>

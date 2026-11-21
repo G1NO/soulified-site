@@ -15,6 +15,7 @@ const FORM_EMAIL = "{{FORM_EMAIL}}";
     vocal: ["Lead vocal"],
     full: ["Full band"],
     signature: [],
+    yourvoice: ["My own vocal (I'll record it)"],
   };
   if (svc && SERVICE_MAP[svc]) {
     form.querySelectorAll('input[name="Make human"]').forEach((cb) => {
@@ -26,7 +27,7 @@ const FORM_EMAIL = "{{FORM_EMAIL}}";
       if (d) { d.placeholder = "Who would you love on your record?"; setTimeout(() => d.scrollIntoView({ block: "center" }), 300); }
     }
     if (pkg) {
-      const labels = { single: "Session part", vocal: "Lead vocal", full: "Full band", signature: "Signature artist" };
+      const labels = { single: "Session part", vocal: "Lead vocal", full: "Full band", signature: "Signature artist", yourvoice: "Your Voice" };
       pkg.value = labels[svc];
     }
   }
