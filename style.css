@@ -187,3 +187,8 @@ input::placeholder,textarea::placeholder{color:#6b6b6b}
   .price.wide{flex-direction:column;align-items:stretch;gap:14px}
   .price.wide .wide-side{flex:none}
 }
+.law{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.law h3{font-size:20px;margin:0 0 6px}
+.law .check li{color:var(--muted)}
+.law .check b{color:var(--ink)}
+details p a,#ownership a{color:var(--gold2)}
