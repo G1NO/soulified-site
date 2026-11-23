@@ -34,6 +34,7 @@
     <div class="kicker">For musicians</div>
     <h1>Bring your sound. Name your price.</h1>
     <p class="lead">Soulified connects AI song creators with top-tier singers, session players and established bands. You record from your own setup, we handle the client, and you get paid well for your work. We're selective: we're building a roster of serious professionals, not a crowd.</p>
+    <p class="lead" style="margin-top:12px"><b style="color:var(--gold2)">Bands, this is built for you.</b> Most platforms only hire solo freelancers. We put whole songs in the hands of real bands, so if you play together, apply together.</p>
   </div>
 
   <div class="grid3" style="margin:0 0 40px">
@@ -46,26 +47,41 @@
     <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <fieldset>
-      <legend>About you</legend>
+      <legend data-swap="Applying as=Band|About you and your band">About you</legend>
+      <div class="field"><label for="type">Applying as <span class="req">*</span></label>
+        <select id="type" name="Applying as" required><option value="">Choose one</option><option>Solo musician / singer</option><option>Band</option><option>Producer / engineer</option></select></div>
       <div class="row2">
-        <div class="field"><label for="name">Your name <span class="req">*</span></label><input id="name" type="text" name="Name" required autocomplete="name"></div>
+        <div class="field"><label for="name"><span data-swap="Applying as=Band|Contact name (band member or manager)">Your name</span> <span class="req">*</span></label><input id="name" type="text" name="Name" required autocomplete="name"></div>
         <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" type="email" name="Email" required autocomplete="email"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="stage">Artist or band name <span class="hint">Optional</span></label><input id="stage" type="text" name="Artist or band name"></div>
         <div class="field"><label for="loc">City and country</label><input id="loc" type="text" name="Location"></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="type">Applying as <span class="req">*</span></label>
-          <select id="type" name="Applying as" required><option value="">Choose one</option><option>Solo musician / singer</option><option>Full band</option><option>Producer / engineer</option></select></div>
-        <div class="field"><label for="years">Years playing</label>
+        <div class="field"><label for="years"><span data-swap="Applying as=Band|Years playing together">Years playing</span></label>
           <select id="years" name="Years experience"><option value="">Choose one</option><option>Under 5</option><option>5 to 10</option><option>10 to 20</option><option>20+</option></select></div>
       </div>
+      <div class="field" data-show-if="Applying as!=Band"><label for="stage">Artist name <span class="hint">Optional</span></label><input id="stage" type="text" name="Artist name"></div>
+    </fieldset>
+
+    <fieldset data-show-if="Applying as=Band" hidden>
+      <legend>Your band</legend>
+      <div class="row2">
+        <div class="field"><label for="band">Band name <span class="req">*</span></label><input id="band" type="text" name="Band name" required></div>
+        <div class="field"><label for="members">Members <span class="req">*</span></label>
+          <select id="members" name="Members" required><option value="">Choose one</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6 or more</option></select></div>
+      </div>
+      <div class="field"><label for="lineup">Lineup <span class="req">*</span><span class="hint">Who plays what. Example: "Axe: lead vocals and guitar. Rico: drums. Dee: bass and backing vocals."</span></label><textarea id="lineup" name="Lineup" required></textarea></div>
+      <div class="row2">
+        <div class="field"><label for="howrec">How you record <span class="req">*</span></label>
+          <select id="howrec" name="How the band records" required><option value="">Choose one</option><option>Together, live in our own studio or rehearsal space</option><option>Together, in a studio we book</option><option>Each member tracks their part separately</option><option>A mix of both</option></select></div>
+        <div class="field"><label for="live">Live experience</label>
+          <select id="live" name="Live experience"><option value="">Choose one</option><option>Studio only</option><option>Gigging locally</option><option>Touring regionally</option><option>Touring nationally or internationally</option></select></div>
+      </div>
+      <div class="field"><label for="bandlinks">Band website or socials</label><input id="bandlinks" type="text" name="Band links"></div>
     </fieldset>
 
     <fieldset>
-      <legend>What you play</legend>
-      <div class="field"><span class="label">Instruments and roles <span class="req">*</span></span>
+      <legend data-swap="Applying as=Band|What the band plays">What you play</legend>
+      <div class="field"><span class="label"><span data-swap="Applying as=Band|Instruments and roles the band covers">Instruments and roles</span> <span class="req">*</span></span>
         <div class="opts" data-required-group="Instruments and roles">
           <label class="opt"><input type="checkbox" name="Instruments" value="Lead vocals"><span>Lead vocals</span></label>
           <label class="opt"><input type="checkbox" name="Instruments" value="Backing vocals"><span>Backing vocals</span></label>
@@ -80,7 +96,7 @@
           <label class="opt"><input type="checkbox" name="Instruments" value="Other"><span>Other</span></label>
         </div>
       </div>
-      <div class="field"><span class="label">Genres you're strongest in <span class="req">*</span></span>
+      <div class="field"><span class="label"><span data-swap="Applying as=Band|Genres the band is strongest in">Genres you're strongest in</span> <span class="req">*</span></span>
         <div class="opts" data-required-group="Genres">
           <label class="opt"><input type="checkbox" name="Genres" value="Rock"><span>Rock</span></label>
           <label class="opt"><input type="checkbox" name="Genres" value="Indie"><span>Indie</span></label>
@@ -105,14 +121,14 @@
     <fieldset>
       <legend>Your sound</legend>
       <div class="field"><label for="credits">Credits and notable work <span class="req">*</span><span class="hint">Albums, artists you've recorded or toured with, placements, labels, chart or streaming highlights. The more specific, the better.</span></label><textarea id="credits" name="Credits and notable work" required></textarea></div>
-      <div class="field"><label for="samples">Links to your playing <span class="req">*</span><span class="hint">2 or 3 recordings that show your best work: SoundCloud, YouTube, Instagram, Drive, your site. Your own parts matter most.</span></label><textarea id="samples" name="Sample links" required></textarea></div>
+      <div class="field"><label for="samples"><span data-swap="Applying as=Band|Links to the band's recordings">Links to your playing</span> <span class="req">*</span><span class="hint">2 or 3 recordings that show your best work: SoundCloud, YouTube, Instagram, Drive, your site. Your own parts matter most.</span></label><textarea id="samples" name="Sample links" required></textarea></div>
       <div class="row2">
         <div class="field"><label for="setup">Recording setup <span class="req">*</span></label>
           <select id="setup" name="Recording setup" required><option value="">Choose one</option><option>Pro home or studio setup</option><option>Basic home setup (interface and mic)</option><option>I need studio access</option></select></div>
-        <div class="field"><label for="turn">Typical turnaround for one part</label>
+        <div class="field"><label for="turn"><span data-swap="Applying as=Band|Typical turnaround for a full song">Typical turnaround for one part</span></label>
           <select id="turn" name="Turnaround"><option value="">Choose one</option><option>1 to 2 days</option><option>3 to 5 days</option><option>About a week</option><option>Depends on the job</option></select></div>
       </div>
-      <div class="field"><label for="rate">Your rate <span class="hint">Per part, per song, or per day. A ballpark is fine.</span></label><input id="rate" type="text" name="Usual rate"></div>
+      <div class="field"><label for="rate"><span data-swap="Applying as=Band|Band rate">Your rate</span> <span class="hint" data-swap="Applying as=Band|Per song for the full band. A ballpark is fine.">Per part, per song, or per day. A ballpark is fine.</span></label><input id="rate" type="text" name="Usual rate"></div>
       <div class="field"><label for="more">Anything else we should know?</label><textarea id="more" name="Notes"></textarea></div>
     </fieldset>
 

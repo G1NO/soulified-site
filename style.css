@@ -192,3 +192,4 @@ input::placeholder,textarea::placeholder{color:#6b6b6b}
 .law .check li{color:var(--muted)}
 .law .check b{color:var(--ink)}
 details p a,#ownership a{color:var(--gold2)}
+[hidden]{display:none!important}

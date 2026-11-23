@@ -65,6 +65,30 @@ const FORM_EMAIL = "gino@besoulified.com";
   );
   rightsCheck();
 
+  // Show/hide sections and swap labels based on another field: data-show-if="Field=Value" (or !=), data-swap="Field=Value|Text"
+  const cond = (spec) => {
+    const neg = spec.includes("!=");
+    const [f, v] = spec.split(neg ? "!=" : "=");
+    const src = form.querySelector('[name="' + f + '"]');
+    const hit = !!src && src.value === v;
+    return neg ? !hit : hit;
+  };
+  const swaps = form.querySelectorAll("[data-swap]");
+  swaps.forEach((el) => { el.dataset.default = el.textContent; });
+  function applyConditions() {
+    form.querySelectorAll("[data-show-if]").forEach((el) => {
+      const on = cond(el.dataset.showIf);
+      el.hidden = !on;
+      el.querySelectorAll("input,select,textarea").forEach((i) => { i.disabled = !on; });
+    });
+    swaps.forEach((el) => {
+      const [spec, text] = el.dataset.swap.split("|");
+      el.textContent = cond(spec) ? text : el.dataset.default;
+    });
+  }
+  form.addEventListener("change", applyConditions);
+  applyConditions();
+
   // Submit
   const msg = form.querySelector(".form-msg");
   const btn = form.querySelector('button[type="submit"]');
@@ -93,7 +117,7 @@ const FORM_EMAIL = "gino@besoulified.com";
       data[k] = data[k] ? data[k] + ", " + v : v;
     }
     form.querySelectorAll("input[data-optin]").forEach((c) => { if (!c.checked) data[c.name] = "No"; });
-    data._subject = form.dataset.subject + (data["Song title"] ? ": " + data["Song title"] : data["Name"] ? ": " + data["Name"] : "");
+    data._subject = form.dataset.subject + (data["Song title"] ? ": " + data["Song title"] : data["Band name"] ? ": " + data["Band name"] + " (band)" : data["Name"] ? ": " + data["Name"] : "");
     data._template = "table";
     if (data["Email"]) data._replyto = data["Email"];
 
